@@ -1,0 +1,24 @@
+{
+  "name": "webcrawlerjs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ifellinaholeonce/webCrawlerJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifellinaholeonce/webCrawlerJS/issues"
+  },
+  "homepage": "https://github.com/ifellinaholeonce/webCrawlerJS#readme",
+  "dependencies": {
+    "chai": "^4.1.1",
+    "express": "^4.15.4",
+    "mocha": "^3.5.0"
+  }
+}
