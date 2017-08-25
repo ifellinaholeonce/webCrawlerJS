@@ -26,41 +26,13 @@ function getLinks(index, body){
 	return
 }
 
-// function getBody(seed, body){
-// 	http.get(seed, function(body){
-// 		return(body);
-// 	}).on('error', function(e){
-// 		console.log("Got error: " + e.message);
-// 	});
-// }
-
-function getNextPage(index){
-	console.log("Received getNextPage")
-	for (e in index){
-		request(index[e], function (error, response, body) {
-			console.log('error:', error); // Print the error if one occurred 
-			console.log('statusCode:', response && response.statusCode);
-			console.log("getLinks");
-			getLinks(index, body);
-			console.log("BACK TO getNextPage")
-		});
-		console.log("Does it get here?")
-	}
-	console.log("Finished getNextPage")
-	return
-}
 
 exports.crawl = function(seed, body){
 	console.log("Received Body");
 	console.log(body.length);
 	var index = [seed];
 
-	//getBody(seed,body);
-	//console.log("Returned from getBody")
 	getLinks(index, body);
-	// console.log("INDEX:")
-	// console.log(index);
-	// console.log("---------------")
-	//console.log("Body is " + body);
+
 	return(index.toString());
 }
