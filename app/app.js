@@ -18,14 +18,16 @@ app.use('/',function(req, res, next){
 });
 
 app.get("/", function(req, res){
-	request('http://econpy.pythonanywhere.com/ex/001.html', function (error, response, body) {
-	console.log('error:', error); // Print the error if one occurred 
-	console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
-	
-	var count = crawler.counter(body);
-	console.log(count);
-	res.send(count);
-});
+	var seed = 'http://titan.dcs.bbk.ac.uk/~kikpef01/testpage.html';
+	request(seed, function (error, response, body) {
+		console.log('error:', error); // Print the error if one occurred 
+		console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
+		
+		var result = crawler.crawl(seed, body);
+		console.log("RESULT")
+		console.log(result);
+		res.send(result);
+	});
 
 });
 
