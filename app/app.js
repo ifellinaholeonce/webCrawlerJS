@@ -23,7 +23,7 @@ app.get("/", function(req, res){
 		console.log('error:', error); // Print the error if one occurred 
 		console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
 		
-		var result = crawler.crawl(seed, body);
+		var result = crawler.index(seed);
 		console.log("RESULT")
 		console.log(result);
 		res.send(result);
