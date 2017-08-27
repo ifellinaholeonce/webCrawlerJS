@@ -10,9 +10,9 @@ function getLinks($){
 	//CURRENTLY ADDING LINKS TO INDEX AS A COUNT NOT THE ACTUAL URL STRING.
 	links = $('a');
 	$(links).each(function(i, link){
-	//console.log($(link).text() + ':\n ' + $(link).attr('href'));
-	index.push($(link).text());
-	console.log(index);
+		//console.log($(link).text() + ':\n ' + $(link).attr('href'));
+		index.push($(link).attr('href'));
+		console.log(index);
 	});
 }
 
@@ -24,7 +24,7 @@ function getBody(seed, callback){
 		
 		var $ = cheerio.load(body);
 		getLinks($);
-		console.log("getLinks returns:" + index);
+		//console.log("getLinks returns:" + index);
 		callback(index);
 	})
 }
