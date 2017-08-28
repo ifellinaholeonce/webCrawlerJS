@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
-				"l",
-				"length"
+				"get",
+				"getContent"
 			],
 			[
-				"get",
-				"getBody"
+				"pages",
+				"pagesCrawled"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
+				"page",
+				"pagesCrawled"
+			],
+			[
+				"l",
+				"length"
 			],
 			[
 				"link",
@@ -59,42 +71,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 13,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/app.js",
-			"settings":
-			{
-				"buffer_size": 957,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/crawler.js",
-			"settings":
-			{
-				"buffer_size": 1684,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test/crawler.js",
-			"settings":
-			{
-				"buffer_size": 485,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -137,6 +113,12 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/webCrawlerJS/app/crawler.js",
+		"/C/Dev/webCrawlerJS/app/app.js",
+		"/C/Dev/test/app.js",
+		"/C/Dev/webCrawlerJS/.gitignore",
+		"/C/Dev/ifellinaholeonce.github.io/_posts/2017-08-18-Day-2.markdown",
+		"/C/Dev/webCrawlerJS/test/crawler.js",
 		"/C/Dev/webCrawlerJS/webCrawlerJS.sublime-project",
 		"/C/Dev/smallApp/app/server.js",
 		"/C/Dev/webCrawlerJS/package.json",
@@ -202,125 +184,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13,
-								13
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 957,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								494,
-								494
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/crawler.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1684,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								571,
-								571
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "test/crawler.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 485,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								183,
-								183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],

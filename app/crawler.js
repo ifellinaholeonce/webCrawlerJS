@@ -9,9 +9,9 @@ var maxCrawl = 5;
 var currentCrawl = 0;
 
 
-function getLinks(seed, $){
-	pagesCrawled.push(seed);
-	console.log("Pushing to pagesCrawled: " + seed)
+function getLinks($){
+	//pagesCrawled.push(seed);
+	//console.log("Pushing to pagesCrawled: " + seed)
 	//CURRENTLY ADDING LINKS TO INDEX AS A COUNT NOT THE ACTUAL URL STRING.
 	links = $('a');
 	$(links).each(function(i, link){
@@ -25,56 +25,77 @@ function getLinks(seed, $){
 
 
 function getBody(seed, callback){
+	pagesCrawled.push(seed);
 	console.log("Requesting page:" + seed);
-	 if (pagesCrawled.includes(seed)){
-	 	console.log("Already crawled:" + seed);
-	 	console.log("Already crawled pagesCrawled: " + pagesCrawled)
-	 	callback(index);
-	 }
+	 // if (pagesCrawled.includes(seed)){
+	 // 	console.log("Already crawled:" + seed);
+	 // 	console.log("Already crawled pagesCrawled: " + pagesCrawled)
+	 // 	callback(index);
+	 // }
 	request(seed, function (error, response, body) {
 		console.log('error:', error); // Print the error if one occurred 
 		console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
 		
 		var $ = cheerio.load(body);
-		getLinks(seed, $);
+		getLinks($);
 		//console.log("getLinks returns:" + index);
-		callback(index);
+		callback();
 	});
 }
 
 
-function crawl(index){
+function crawl(){
 	console.log("Pages Crawled: " + pagesCrawled);
-	console.log("Received crawl")
+	//console.log("Received crawl")
 	//getBody needs the seed to be taken out of the array. Putting it inside a loop.
-	if (index.length != 0){
-		console.log("index before pop: " + index)
+	if (index.length > 0){
 		pageToCrawl = index.pop();
 		//Check to see if page has already been crawled
-		if (currentCrawl < maxCrawl){
+		if (pageToCrawl in pagesCrawled){
+			crawl();
+		} else {
 			currentCrawl++;
-			getBody(pageToCrawl, crawl);
-		} else if (currentCrawl == maxCrawl) {
-			return(pagesCrawled)
+			getBody(pageToCrawl, crawl)
 		}
+	} else {
+		console.log("Index is empty");
 	}
+		// if (currentCrawl < maxCrawl){
+		// 	currentCrawl++;
+		// 	getBody(pageToCrawl, crawl);
+		// } else if (currentCrawl == maxCrawl) {
+		// 	return(pagesCrawled)
+		// }
+	//}
 	// else {
 	// 	console.log("Empty Index:" + index);
 	// 	return(pagesCrawled);
 	// }
-	return(pagesCrawled);
+	//return(pagesCrawled);
 
 }
 
 
-exports.index = function(seed){
-	index.push(seed);
-	crawl(index);
-	console.log("Ddoes it get here?");
-	return(pagesCrawled.toString());
+exports.start = function (seed){
+//var seed = 'http://econpy.pythonanywhere.com/ex/001.html'
+// const promise = new Promise((resolve, reject) =>{
+	index.push(seed)
+	crawl();
+ 	//setTimeout(function(){
+ 	/*	resolve();
+//  	}, 2000);	
+//  });
+
+// promise.then(() => { 
+// console.log("Returned to start")	
+// return(pagesCrawled);
+// });*/
 }
 
 
+exports.finalPagesCrawled = function(){
+	return(pagesCrawled.toString())
+}
 
 
 
